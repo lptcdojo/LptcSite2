@@ -1,0 +1,22 @@
+{
+  "name": "lptcsite2",
+  "version": "1.0.0",
+  "description": "New website for the coderdojo",
+  "main": "main.js",
+  "scripts": {
+    "test": "node main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Coderdojo-Leixlip/LptcSite2.git"
+  },
+  "author": "Multiple",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Coderdojo-Leixlip/LptcSite2/issues"
+  },
+  "homepage": "https://github.com/Coderdojo-Leixlip/LptcSite2#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
