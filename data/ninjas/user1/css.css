@@ -1,0 +1,17 @@
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th {
+  width: 33%}
+div {
+  background-color:#ff3232;
+  padding: 0px;
+}
+body {
+  margin: 0px;
+  background-color: #918e8e;
+}
+img {
+  width: 100%
+}

@@ -1,0 +1,13 @@
+@font-face {
+	font-family: "PressStart2p";
+	src: url('/fonts/PressStart2P.ttf') format('truetype');
+}
+body {
+  font-family: PressStart2p;
+  color: #00ff00;
+  background-color: #000000;
+}
+a {
+  color:#00ff00;
+  text-decoration: none;
+}

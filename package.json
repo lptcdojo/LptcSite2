@@ -4,7 +4,8 @@
   "description": "New website for the coderdojo",
   "main": "main.js",
   "scripts": {
-    "test": "node main.js"
+    "test": "node main.js",
+	"start" : "node main.js"
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,9 @@
   },
   "homepage": "https://github.com/Coderdojo-Leixlip/LptcSite2#readme",
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "nedb": "^1.8.0",
+    "nunjucks": "^3.2.0",
+    "path": "^0.12.7"
   }
 }

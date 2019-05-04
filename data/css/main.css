@@ -1,0 +1,77 @@
+ @font-face {
+ font-family: "font1";
+ src: url('/fonts/cour.ttf') format('truetype');;
+} 
+ 
+ 
+ #navbar {
+  overflow: hidden;
+  padding: 15px 5px;
+  transition: 0.4s;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 99;
+  height:11%;
+}
+ 
+ body {margin:0;}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 50%;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+.logo {
+  font-size = 20px;
+}
+.active {
+  background-color: gray;
+}
+table, th, td {
+  border: 0px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 0px;
+}
+iframe {
+  margin-left: auto;
+  margin-right: auto;
+}
+p {
+  font-family: font1;
+  color: white;
+}
+h3 {
+  font-family: font1;
+  color: white;
+}
+h1 {
+  font-family: font1;
+  color: white;
+}
+a {
+  color: #ffffff;
+}

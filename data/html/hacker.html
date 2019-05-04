@@ -1,0 +1,25 @@
+<html>
+<head>
+<link rel="stylesheet" href="/css/hacker.css">
+</head>
+<body>
+<div>
+<p>Hacker Mode Activated!</p>
+<br>
+<p>Scratch Games:</p>
+{% for item in scratch %}
+<p><a href="/hackerscratch?id={{item.id}}">> {{item.name}}</a></p>
+{% else %}
+<p>None Found</p>
+{% endfor %}
+<br>
+<p>Html Pages:</p>
+{% for item in users%}
+<p><a href="/ninjas/{{item.id}}">> {{item.name}}</a></p>
+{% else %}
+<p>None Found</p>
+{% endfor %}
+</font>
+</div>
+</body>
+</html>
