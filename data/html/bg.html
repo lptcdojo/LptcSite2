@@ -6,9 +6,9 @@
 <header>
 <nav >
 <ul id="navbar">
-  <li id="logo" class="active"><a href="/"><font face="font1"><!--<img src="/imgs/yinyang.png" height="25px" width="25px">--><h3>Home</h3></font></a></li>
-  <li><a href="/html"><font face="font1"><h3>HTML</h3></font></a></li>
-  <li><a href="/scratch"><font face="font1"><h3>Scratch</h3></font></a></li>
+  <li id="/"><a href="/"><font face="font1"><!--<img src="/imgs/yinyang.png" height="25px" width="25px">--><h3>Home</h3></font></a></li>
+  <li id="/html/"><a href="/html"><font face="font1"><h3>HTML</h3></font></a></li>
+  <li id="/scratch"><a href="/scratch"><font face="font1"><h3>Scratch</h3></font></a></li>
   </ul>
   </nav>
   </header>
@@ -16,4 +16,19 @@
   <br /><br /><br /><br /><br /><br /><br /><br />
   {%block content%}{% endblock %}
  </main>
+<script>
+
+console.log(window.location.href)
+var i =0
+var index = 0
+while (i !== 3) {
+	index = window.location.href.indexOf("/", index+1)
+	i=i+1
+}
+console.log(index)
+var name=window.location.href.substring(index)
+console.log(name)
+console.log(name)
+document.getElementById(name).className = "active";
+</script>
 </html>

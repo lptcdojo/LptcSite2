@@ -5,9 +5,11 @@ const Datastore = require('nedb');
 
 
 const app = express()
-app.use(express.static(path.join(__dirname, 'data')))
+
+
 scratchdb= new Datastore({filename:path.join(__dirname, 'data/dbs/scratch.db'), autoload: true})
 userdb= new Datastore({filename:path.join(__dirname, 'data/dbs/users.db'), autoload: true})
+
 nunjucks.configure(path.join('data', 'html'), {
 	autoescape: true,
 	express: app
@@ -46,7 +48,7 @@ app.get("/hackerscratch", (req,res) => {
 })
 
 
-
+app.use(express.static(path.join(__dirname, 'data')))
 app.get("*", (req,res) => {
 	res.send(nunjucks.render("error.html"))
 })
