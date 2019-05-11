@@ -1,34 +1,19 @@
 <html>
-<head>
-<link rel="stylesheet" href="/css/main.css">
-</head>
-<body bgcolor="teal">
-<header>
-<nav >
-<ul id="navbar">
-  <li id="/"><a href="/"><font face="font1"><!--<img src="/imgs/yinyang.png" height="25px" width="25px">--><h3>Home</h3></font></a></li>
-  <li id="/html/"><a href="/html/"><font face="font1"><h3>HTML</h3></font></a></li>
-  <li id="/scratch"><a href="/scratch"><font face="font1"><h3>Scratch</h3></font></a></li>
-  </ul>
-  </nav>
-  </header>
-<main>
-  <br /><br /><br /><br /><br /><br /><br /><br />
-  {%block content%}{% endblock %}
- </main>
-<script>
-
-console.log(window.location.href)
-var i =0
-var index = 0
-while (i !== 3) {
-	index = window.location.href.indexOf("/", index+1)
-	i=i+1
-}
-console.log(index)
-var name=window.location.href.substring(index)
-console.log(name)
-console.log(name)
-document.getElementById(name).className = "active";
-</script>
+  <head>
+      <meta name="viewport" content="width=device-width" />
+      <link rel="stylesheet" href="/css/main.css">
+  </head>
+<body>
+  <header>
+    <nav>
+      <ul id="navbar">
+      {% for item in menuItems %}
+        <li {% if activePath == item.path %}class="active"{% endif %}><a href="{{ item.path }}">{{ item.title }}</a></li>
+      {% endfor %}
+      </ul>
+    </nav>
+    </header>
+  <main>
+    {% block content %}{% endblock %}
+  </main>
 </html>
