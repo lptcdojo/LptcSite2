@@ -75,6 +75,10 @@ app.get("/hackerscratch", (req, res) => {
   res.render("hackerscratch.html", { id: id });
 });
 
+app.get("/admin", (req,res) => { 
+	res.send(nunjucks.render("rickroll.html"))
+})
+
 app.use(express.static(path.join(__dirname, "data")));
 app.get("*", (req, res) => {
   res.render("error.html");

@@ -24,7 +24,7 @@ header {
   list-style-type: none;
   margin: 0;
   padding: 15px 5px;
-  transition: 0.4s;
+  /*transition: 0.4s;*/
 }
 
 li {
