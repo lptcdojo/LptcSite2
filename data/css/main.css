@@ -1,75 +1,85 @@
- @font-face {
- font-family: "font1";
- src: url('/fonts/cour.ttf') format('truetype');;
-} 
- 
- 
- #navbar {
-  overflow: hidden;
-  padding: 15px 5px;
-  transition: 0.4s;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 99;
-  height:11%;
+@font-face {
+  font-family: "font1";
+  src: url("/fonts/cour.ttf") format("truetype");
 }
- 
- body {margin:0;}
 
-ul {
-  list-style-type: none;
+body {
+  background: teal;
+  display: flex;
+  flex-direction: column;
   margin: 0;
   padding: 0;
-  overflow: hidden;
-  background-color: #333;
-  position: fixed;
+}
+
+header {
+  position: sticky;
   top: 0;
-  width: 50%;
+}
+
+#navbar {
+  background: #333;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  list-style-type: none;
+  margin: 0;
+  padding: 15px 5px;
+  transition: 0.4s;
 }
 
 li {
-  float: left;
+  color: white;
+  font: normal bold 1.3em "font1";
 }
 
 li a {
-  display: block;
   color: white;
+  display: block;
   text-align: center;
-  padding: 14px 16px;
   text-decoration: none;
+  padding: 15px 16px;
 }
 
-li a:hover:not(.active) {
+li:not(.active) a:hover {
   background-color: #111;
 }
 
 .active {
   background-color: gray;
 }
-table, th, td {
+
+table,
+th,
+td {
   border: 0px solid black;
   border-collapse: collapse;
 }
-th, td {
+
+th,
+td {
   padding: 0px;
 }
+
 iframe {
   margin-left: auto;
   margin-right: auto;
 }
+
 p {
   font-family: font1;
   color: white;
 }
+
 h3 {
   font-family: font1;
   color: white;
 }
+
 h1 {
   font-family: font1;
   color: white;
 }
+
 a {
   color: #ffffff;
 }
