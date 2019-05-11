@@ -18,6 +18,10 @@ const userdb = new Datastore({
   filename: path.join(__dirname, "data/dbs/users.db"),
   autoload: true
 });
+const newsdb = new Datastore({
+  filename: path.join(__dirname, "data/dbs/news.db"),
+  autoload: true
+});
 
 nunjucks
   .configure(path.join("data", "html"), {
@@ -59,7 +63,17 @@ app.get("/playscratch", (req, res) => {
   let id = req.query.id;
   res.render("playscratch.html", { id: id });
 });
-
+app.get('/news', (req,res) => {
+	newsdb.find({}, (err,docs) => {
+		res.send(nunjucks.render('list.html', {items: docs, title: "Articles", shortlink: "/article?id="}))
+	})
+})
+app.get('/article', (req,res) => {
+	let id=req.query.id;
+	newsdb.find({id:id}, (err,docs) => {
+		res.render("content.html", {content: docs[0].content});
+	})
+})
 app.get("/hacker", (req, res) => {
   scratchdb.find({}, (err, docs) => {
     var scratch = docs;
