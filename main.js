@@ -6,8 +6,9 @@ const Datastore = require("nedb");
 const app = express();
 const menuItems = [
   { title: "Home", path: "/" },
+  { title: "News", path: "/news/"},
   { title: "HTML", path: "/html/" },
-  { title: "Scratch", path: "/scratch" }
+  { title: "Scratch", path: "/scratch/" }
 ];
 
 const scratchdb = new Datastore({
@@ -65,15 +66,19 @@ app.get("/playscratch", (req, res) => {
 });
 app.get('/news', (req,res) => {
 	newsdb.find({}, (err,docs) => {
-		res.send(nunjucks.render('list.html', {items: docs, title: "Articles", shortlink: "/article?id="}))
+		res.render('list.html', {items: docs, title: "Articles", shortlink: "/article?id="})
 	})
 })
 app.get('/article', (req,res) => {
 	let id=req.query.id;
 	newsdb.find({id:id}, (err,docs) => {
-		res.render("content.html", {content: docs[0].content});
+		res.render("content.html", {content: docs[0].content, name: docs[0].name});
 	})
 })
+
+
+
+
 app.get("/hacker", (req, res) => {
   scratchdb.find({}, (err, docs) => {
     var scratch = docs;
@@ -92,7 +97,12 @@ app.get("/hackerscratch", (req, res) => {
 app.get("/admin", (req,res) => { 
 	res.send(nunjucks.render("rickroll.html"))
 })
-
+app.get("/blah", (req,res) => {
+	res.render("blah.html")
+})
+app.get("/login", (req,res) => {
+	res.render("login.html")
+})
 app.use(express.static(path.join(__dirname, "data")));
 app.get("*", (req, res) => {
   res.render("error.html");

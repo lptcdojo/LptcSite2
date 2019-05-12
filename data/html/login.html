@@ -1,0 +1,15 @@
+{% extends "bg.html" %}
+{% block content%}
+<div align="middle">
+<br>
+<input type="text" id="password" value="">
+<button onclick="Submit()">Enter Password</button>
+<script>
+function Submit() {
+	if (document.getElementById("password").value == "1RuleBeCool") {
+		window.location.href = "/admin";
+	}
+}
+</script>
+</div>
+{% endblock %}
