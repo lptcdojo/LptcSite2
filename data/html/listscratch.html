@@ -1,0 +1,15 @@
+{% extends "bg.html" %}
+{% block content%}
+{% for item in items %}
+<br>
+<h2>Games by {{item.username}}:</h2>
+{% for game in item.games %}
+<p><a href="{{shortlink}}{{game.id}}">{{game.name}}</a></p>
+
+{% else %}
+<p>No Games Found</p>
+{% endfor %}
+{% else %}
+<p>No Users Found</p>
+{% endfor %}
+{% endblock %}

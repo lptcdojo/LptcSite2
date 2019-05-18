@@ -42,9 +42,8 @@ app.get("/", (req, res) => {
 
 app.get("/scratch", (req, res) => {
   scratchdb.find({}, (err, docs) => {
-    res.render("list.html", {
+    res.render("listscratch.html", {
       items: docs,
-      title: "Scratch Games",
       shortlink: "/playscratch?id="
     });
   });
