@@ -4,22 +4,23 @@
 </head>
 <body>
 <div>
-<p>Hacker Mode Activated!</p>
+<h2>Hacker Mode Activated!</h2>
 <br>
-<p>Scratch Games:</p>
+<h3>Scratch Games:</h3>
 {% for item in scratch %}
-<br>
+
 <p>Games by {{item.username}}:</p>
 {% for game in item.games %}
 <p><a href="{{shortlink}}{{game.id}}">> {{game.name}}</a></p>
 {% else %}
 <p>No Games Found</p>
 {% endfor %}
+<br>
 {% else %}
 <p>No Users Found</p>
 {% endfor %}
 <br>
-<p>Html Pages:</p>
+<h3>Html Pages:</h3>
 {% for item in users%}
 <p><a href="/ninjas/{{item.id}}">> {{item.name}}</a></p>
 {% else %}
