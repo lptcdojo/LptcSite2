@@ -8,9 +8,15 @@
 <br>
 <p>Scratch Games:</p>
 {% for item in scratch %}
-<p><a href="/hackerscratch?id={{item.id}}">> {{item.name}}</a></p>
+<br>
+<p>Games by {{item.username}}:</p>
+{% for game in item.games %}
+<p><a href="{{shortlink}}{{game.id}}">> {{game.name}}</a></p>
 {% else %}
-<p>None Found</p>
+<p>No Games Found</p>
+{% endfor %}
+{% else %}
+<p>No Users Found</p>
 {% endfor %}
 <br>
 <p>Html Pages:</p>
