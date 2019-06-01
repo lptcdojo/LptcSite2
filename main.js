@@ -10,45 +10,45 @@ const secrets = require("./secrets1")
 //load and initate things
 const app = express();
 const menuItems = [
-  { title: "Home", path: "/" },
-  { title: "News", path: news.basePath},
-  { title: "HTML", path: "/html/" },
-  { title: "Scratch", path: scratch.basePath }
+	{ title: "Home", path: "/" },
+	{ title: "News", path: news.basePath},
+	{ title: "HTML", path: "/html/" },
+	{ title: "Scratch", path: scratch.basePath }
 ];
 
 //initate templating engine
 nunjucks
-  .configure(path.join("data", "html"), {
-    autoescape: true,
-    express: app
-  })
-  .addGlobal("menuItems", menuItems);
+	.configure(path.join("data", "html"), {
+		autoescape: true,
+		express: app
+	})
+	.addGlobal("menuItems", menuItems);
 
 //allows client to read files in the "data" folder
 app.use(express.static(path.join(__dirname, "data")));
 
 //sets the value of req.path to the requested page
 app.use((req, res, next) => {
-  res.locals.activePath = req.path;
-  next();
+	res.locals.activePath = req.path;
+	next();
 });
 
 //sends homepage
 app.get("/", (req, res) => {
-  res.render("home.html");
+	res.render("home.html");
 });
 
 
 
 //sends a selectable list of the ninja created pages
 app.get("/html", (req, res) => {
-  store.users.find({}, (err, docs) => {
-    res.render("list.html", {
-      items: docs,
-      title: "Webpages",
-      shortlink: "/ninjas/"
-    });
-  });
+	store.users.find({}, (err, docs) => {
+		res.render("list.html", {
+			items: docs,
+			title: "Webpages",
+			shortlink: "/ninjas/"
+		});
+	});
 });
 
 
@@ -59,11 +59,11 @@ app.use(news.basePath, news.routes);
 
 //if the requested page is not found send them the error page
 app.get("*", (req, res) => {
-  res.render("error.html");
+	res.render("error.html");
 });
 
 //startup the server
 const server = app.listen(process.env.PORT || 8080, () => {
-  console.log("Running");
-  console.log(server.address());
+	console.log("Running");
+	console.log(server.address());
 });

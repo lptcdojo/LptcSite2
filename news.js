@@ -4,8 +4,8 @@ const store = require("./store");
 const basePath = "/news/";
 
 router.use((req, res, next) => {
-  res.locals.activePath = basePath;
-  next();
+	res.locals.activePath = basePath;
+	next();
 });
 
 
