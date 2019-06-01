@@ -1,6 +1,26 @@
 {% extends "bg.html" %}
 {% block content%}
+<div align="middle">
+{% for game in profile[0].games %}
+{% if game.id == id %}
+<h2>{{game.name}}</h2>
+{% endif%}
+{% else%}
+<p>Title Not Found</p>
+{% endfor%}
 <br>
 <iframe src="https://scratch.mit.edu/projects/{{id}}/embed" height=600 width=800 scrolling="no" frameBorder="0"  style="margin: 0 auto; display: block;"></iframe>
 <br>
+<h3>All Games by {{profile[0].username}}:</h3>
+{% for game in profile[0].games %}
+<p>{{profile.games}}</p>
+<p><a href="{{shortlink}}{{game.id}}{% if button %}&random=1{% endif %}">{{game.name}}</a></p>
+{% else %}
+<p>No Games Found</p>
+{% endfor %}
+<br>
+{% if button %}
+<a href="/scratch/random"><h3>Open a Random Game</h3></a>
+{% endif %}
+</div>
 {% endblock %}

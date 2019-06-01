@@ -1,7 +1,9 @@
 {% extends "bg.html" %}
 {% block content%}
+
 {% for item in items %}
 <br>
+
 <h2>Games by {{item.username}}:</h2>
 {% for game in item.games %}
 <p><a href="{{shortlink}}{{game.id}}">{{game.name}}</a></p>
@@ -12,4 +14,6 @@
 {% else %}
 <p>No Users Found</p>
 {% endfor %}
+<br>
+<a href="/scratch/random"><h3>Open a Random Game</h3></a>
 {% endblock %}
