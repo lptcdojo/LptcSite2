@@ -36,6 +36,11 @@ router.get("/login", (req,res) => {
   res.render("login.html")
 })
 
+//rick roll
+router.get("*", (req,res) => {
+  res.render("rickroll.html")
+})
+
 module.exports = {
 	routes: router,
 	basePath: basePath
