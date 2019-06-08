@@ -11,7 +11,11 @@
 <br>
 <iframe src="https://scratch.mit.edu/projects/{{id}}/embed" height=600 width=800 scrolling="no" frameBorder="0"  style="margin: 0 auto; display: block;"></iframe>
 <br>
+<table style="width=100%" cellspacing="10">
+<tr>
 {% for user in profile %}
+<td style="padding:0 15px 0 15px;">
+<div align="middle">
 <h3>All Games by {{user.username}}:</h3>
 {% for game in user.games %}
 <p>{{profile.games}}</p>
@@ -19,11 +23,15 @@
 {% else %}
 <p>No Games Found</p>
 {% endfor %}
+</div>
+</td>
 {% else %}
 <p>User Not Found</p>
 {% endfor %}
-<br>
 {% if button %}
+</tr>
+</table>
+<br>
 <a href="/scratch/random"><h3>Open a Random Game</h3></a>
 {% endif %}
 </div>
