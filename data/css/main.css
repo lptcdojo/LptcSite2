@@ -5,15 +5,16 @@
 
 body {
   background: teal;
-  display: flex;
   flex-direction: column;
   margin: 0;
   padding: 0;
+  font-family: font1;
+  color: white;
 }
 
 header {
   position: sticky;
-  top: 0;
+  top: 0px;
 }
 
 #navbar {
@@ -24,6 +25,8 @@ header {
   list-style-type: none;
   margin: 0;
   padding: 15px 5px;
+  position: fixed;
+  width: 100%;
   /*transition: 0.4s;*/
 }
 
@@ -48,17 +51,7 @@ li:not(.active) a:hover {
   background-color: gray;
 }
 
-table,
-th,
-td {
-  border: 0px solid black;
-  border-collapse: collapse;
-}
 
-th,
-td {
-  padding: 0px;
-}
 
 iframe {
   margin-left: auto;
@@ -68,6 +61,7 @@ iframe {
 p {
   font-family: font1;
   color: white;
+  margin:0;
 }
 
 
