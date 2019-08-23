@@ -1,14 +1,9 @@
 {% extends "bg.html" %}
 {% block content%}
-<script>
-function Img() {
-	document.getElementById("img1").src = "/imgs/rex_" + (Math.floor(Math.random() * 3) + 1 ) + ".jpg";
-}
-</script>
+
 </head>
-<body onload="Img()">
 <h1>Error 404: Page not found</h1>
 <p>Sorry about that, here is a picture of a dog to help you feel better:</p>
-<img id="img1" src="" width="400px"/>
+<img id="img1" src="/imgs/dogs/{{ (links | random).img }}" width="400px"/>
 <p><a href="/">Homepage</a></p>
 {% endblock %}

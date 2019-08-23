@@ -23,3 +23,6 @@ yarn-error.log*
 /data/ninjas/
 !/data/ninjas/user1/
 !/data/ninjas/user2/
+
+#dog pictures :(
+\data\imgs\dogs

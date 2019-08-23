@@ -59,7 +59,11 @@ app.use(news.basePath, news.routes);
 
 //if the requested page is not found send them the error page
 app.get("*", (req, res) => {
-	res.render("error.html");
+	store.dogs.find({}, (err,docs) => {
+		res.render("error.html", {links: docs});
+		console.log(docs);
+	})
+	
 });
 
 //startup the server
