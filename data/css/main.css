@@ -16,6 +16,9 @@ header {
   position: sticky;
   top: 0px;
 }
+div {
+	margin: 0px;
+}
 
 #navbar {
   background: #333;
@@ -68,6 +71,7 @@ p {
 h1, h2, h3, h4, h5, h6 {
   font-family: font1;
   color: white;
+  margin: 0px;
 }
 
 a {
