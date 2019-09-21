@@ -51,7 +51,10 @@ app.get("/html", (req, res) => {
 	});
 });
 
-
+//sends general information about creators and source code
+app.get("/info", (req, res) => {
+	res.render("info.html");
+});
 
 app.use(secrets.basePath, secrets.routes);
 app.use(scratch.basePath, scratch.routes);

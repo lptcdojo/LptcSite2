@@ -2,7 +2,8 @@
 {% block content%}
 <h3>{{title}}:</h3>
 {% for item in items %}
-<p><a href="{{shortlink}}{{item.id}}">{{item.name}}</a></p>
+<p style="margin-top:8px"><a href="{{shortlink}}{{item.id}}">{{item.name}}</a></p>
+
 {% else %}
 <p>None Found</p>
 {% endfor %}
