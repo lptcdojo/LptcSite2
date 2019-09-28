@@ -23,6 +23,8 @@
     {% block content %}{% endblock %}
   </main>
   <div class="footer">
+    {% if activePath != "/info" %}
   <p><a href="/info">Credits and Source Code</a></p>
+  {% endif %}
  </div>
 </html>
