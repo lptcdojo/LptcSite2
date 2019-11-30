@@ -21,7 +21,8 @@ router.get("/hacker", (req, res) => {
 //hacker theme scratch page
 router.get("/hackerscratch", (req, res) => {
   let id = req.query.id;
-  res.render("hackerscratch.html", { id: id });
+  store.scratch.find({ "games.id": id}, (err,docs) => {
+  res.render("hackerscratch.html", { id: id, profile: docs, shortlink: `${basePath}play?id=`});})
 });
 //sends the "admin" page
 router.get("/admin", (req,res) => { 

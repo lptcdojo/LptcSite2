@@ -22,7 +22,6 @@ router.get("/", (req, res) => {
 router.get("/play", (req, res) => {
 	var id = req.query.id;
 	var rnd= req.query.random;
-	
 	var random = false
 	if (rnd == 1) {
 		random = true;
@@ -36,19 +35,23 @@ router.get("/play", (req, res) => {
 router.get("/random", (req,res) => {
 	store.scratch.find({}, (err,docs) => {
 		var itemnumuser=Object.keys(docs).length;
-	var usernum=Math.floor(Math.random() * Math.floor(itemnumuser))
-	var itemnumgame=Object.keys(docs[usernum].games).length
-	var gamenum=Math.floor(Math.random() * Math.floor(itemnumgame))
-	var id=docs[usernum].games[gamenum].id
-	store.scratch.find({ "games.id": id}, (err,docs) => {
-		var profile = docs
-		res.render("playscratch.html", {id: id, button: true, profile:docs, shortlink: `${basePath}play?id=`})
-})
-	
+		var usernum=Math.floor(Math.random() * Math.floor(itemnumuser))
+		var itemnumgame=Object.keys(docs[usernum].games).length
+		var gamenum=Math.floor(Math.random() * Math.floor(itemnumgame))
+		var id=docs[usernum].games[gamenum].id
+		store.scratch.find({ "games.id": id}, (err,docs) => {
+			var profile = docs
+			res.render("playscratch.html", {id: id, button: true, profile:docs, shortlink: `${basePath}play?id=`})
+		})
 	})
+});
 
-})
-
+router.get("*", (req, res) => {
+	store.dogs.find({}, (err,docs) => {
+		res.render("error.html", {links: docs});
+	})
+	
+});
 module.exports = {
 	routes: router,
 	basePath: basePath

@@ -7,6 +7,8 @@ const store = require("./store");
 const news = require("./news")
 const secrets = require("./secrets1")
 
+
+
 //load and initate things
 const app = express();
 const menuItems = [
@@ -59,12 +61,12 @@ app.get("/info", (req, res) => {
 app.use(secrets.basePath, secrets.routes);
 app.use(scratch.basePath, scratch.routes);
 app.use(news.basePath, news.routes);
+app.use(store.basePath, store.routes);
 
 //if the requested page is not found send them the error page
 app.get("*", (req, res) => {
 	store.dogs.find({}, (err,docs) => {
 		res.render("error.html", {links: docs});
-		console.log(docs);
 	})
 	
 });

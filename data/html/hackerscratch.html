@@ -3,7 +3,23 @@
 <body>
 <div align="center">
 <iframe src="https://scratch.mit.edu/projects/{{id}}/embed" height=600 width=800 scrolling="no" frameBorder="0"></iframe>
-<p>I hope you like this game.</p>
 </div>
+{% for user in profile %}
+<td style="padding:0 15px 0 15px; border: 0px solid;">
+<div align="middle">
+<h3>All Games by {{user.username}}:</h3>
+{% for game in user.games %}
+<p>{{profile.games}}</p>
+<p><a href="{{shortlink}}{{game.id}}{% if button %}&random=1{% endif %}">{{game.name}}</a></p>
+{% else %}
+<p>No Games Found</p>
+{% endfor %}
+</div>
+</td>
+{% else %}
+<p>User Not Found</p>
+{% endfor %}
+</tr>
+</table>
 </body>
 </html>
