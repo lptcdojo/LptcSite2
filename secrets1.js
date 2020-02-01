@@ -24,10 +24,6 @@ router.get("/hackerscratch", (req, res) => {
   store.scratch.find({ "games.id": id}, (err,docs) => {
   res.render("hackerscratch.html", { id: id, profile: docs, shortlink: `${basePath}play?id=`});})
 });
-//sends the "admin" page
-router.get("/admin", (req,res) => { 
-  res.render("rickroll.html")
-})
 //sends the "secret blah page"
 router.get("/blah", (req,res) => {
   res.render("blah.html")

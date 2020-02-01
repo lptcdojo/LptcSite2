@@ -1,0 +1,16 @@
+<html>
+<body>
+
+<h2>{{title}}</h2>
+
+<form action="{{link}}">
+  {% for item in params %}
+  <p>{{item}}</p>
+  <input type="text" name="{{item}}" value="">
+  {% endfor %}
+  <input type="submit" value="Submit">
+</form> 
+
+
+</body>
+</html>
